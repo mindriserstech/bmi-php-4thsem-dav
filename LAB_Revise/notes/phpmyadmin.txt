@@ -1,0 +1,14 @@
+1. Open and run xampp server
+2. go to localhost/phpmyadmin in browser
+3. There are two section
+a. Left Section - Database and database table section
+b. Right Section - description ( table, database, configuration)
+
+To create new database
+1. click on "New" left-top section
+2. set new database name and database collaton
+a. database name should not contain white space
+b. database collation - utf8_unicode_ci (this collation supports all the unicode characters)
+
+3. To create tables and execute sql query in particular database click on the name of the database
+that you created lastly

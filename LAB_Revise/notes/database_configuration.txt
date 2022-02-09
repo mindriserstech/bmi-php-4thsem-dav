@@ -1,0 +1,6 @@
+1. Database name
+2. Database Host
+3. Database User
+4. Database User Password
+
+mysqli

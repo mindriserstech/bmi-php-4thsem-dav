@@ -1,6 +1,12 @@
 <!-- PHP Code starts -->
 <?php 
     session_start();
+
+    if(isset($_POST['btnLogout'])){
+        session_destroy();
+        header("Location: login.php");
+    }
+
     if(!isset($_SESSION['email'])){
         // method one
         // echo '<img src="https://thumbs.dreamstime.com/b/access-denied-rubber-stamp-over-white-background-86663740.jpg">';
@@ -62,9 +68,8 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" method="POST" action="index.php">
+                    <button class="btn btn-outline-success" type="submit" name="btnLogout">Logout</button>
                 </form>
                 </div>
             </div>
@@ -74,6 +79,37 @@
         <!-- Content starts -->
         <div class="container-fluid">
             <h1>Welcome to BMI <?php echo $_SESSION['email']; ?></h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Check BMI</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#">
+                            <div class="form-group mb-3">
+                                <label for="email">Weight:</label>
+                                <input type="text" class="form-control" name="weight" placeholder="Enter Weight">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="email">Height:</label>
+                                <input type="text" class="form-control" name="height" placeholder="Enter Height">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="email">Age:</label>
+                                <input type="number" class="form-control" name="age" placeholder="Enter Weight">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <input type="submit" value="CHECK" class="btn btn-primary">
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    Calculation Section
+                </div>
+            </div>
         </div>
         <!-- content ends -->
 
