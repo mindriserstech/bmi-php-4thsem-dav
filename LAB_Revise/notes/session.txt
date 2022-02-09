@@ -1,0 +1,63 @@
+Cookies and Session in PHP
+
+1. Session - to save data in browser
+2. Cookies - to save data in browser
+
+Difference between Cookies and Session
+1. Session is destroyed once the browser is destroyed
+2. Cookies saves data for certain period of time even if the browser is destroyed
+
+Use of Session
+1. To store user information once the user logs-in and registers-in into our system with particular duration
+i.e life span of browser
+2. To use stored data from page to page to maintain access level of user into our system
+e.g manage access to system
+
+Use of Cookies
+1. To save user information for future purpose for certain period of time
+e.g cart system, login credentials saving, login attempt
+
+Note:- we never save sensitive data in session and cookies
+e.g credit card information, visa card information, password
+
+# SESSION
+$_SESSION - this global variable is used to store and access session data
+
+1. to start session in web page
+session_start() method is use to start the session in our webpage
+this method must be defined at the top of the everypage we need to work with session
+
+2. to store value in session
+$_SESSION['login_user'] = "sandesh@gmail.com";
+$_SESSION['login_id'] = "1";
+
+3. to update value in session - we case existing session key and replace it's existing value with new value
+$_SESSION['login_user'] = "hari@gmail.com";
+
+4. to destroy session
+session_unset() - removes all session variables
+session_destroy() - current active session
+
+# COOKIES
+1. To store data in cookie
+
+setcookie(cookie_name, cookie_value, time)
+takes 3 parameter
+1. Cookie Name - name of cookie we want to save as 
+2. Cookie value - value or data that we want to save in cookie
+3. Time - time or life duration of cookie 
+
+2. to access cookie data - cookie must be stored already to access it with $_COOKIE variable
+$_COOKIE['cookie_name'] - this global variable is use to access cookies data 
+
+3. to destroy cookie
+same function is used to destroy but the parameter value are different
+
+setcookie(cookie_name, "", time (subtract time below than zero))
+
+4. to update cookie
+setcookie(cookie_name, cookie_value, time)
+takes 3 parameter
+1. Cookie Name - existing name 
+2. Cookie value - new value
+3. Time - time or life duration of cookie 

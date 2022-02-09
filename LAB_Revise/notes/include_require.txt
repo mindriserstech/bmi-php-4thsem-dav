@@ -1,0 +1,9 @@
+include() and require() methods
+
+1. always include pages at the top of the code structure
+e.g require 'pages/func.php';
+e.g include 'pages/func.php';
+
+2. difference of include and require
+a. require - throws fatal error and stops execution of scripts
+b. include - throws warning and it do not stops execution of scripts
